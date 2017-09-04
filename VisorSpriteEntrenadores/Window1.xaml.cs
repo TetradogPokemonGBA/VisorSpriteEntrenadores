@@ -42,7 +42,7 @@ namespace VisorSpriteEntrenadores
 			EdicionPokemon edicion;
 			Compilacion compilacion;
 			System.Windows.Controls.Image img;
-			
+
 			OpenFileDialog opn=new OpenFileDialog();
 			opn.Filter="Pokemon GBA|*.gba";
 			if(opn.ShowDialog().GetValueOrDefault())
@@ -53,7 +53,6 @@ namespace VisorSpriteEntrenadores
 				
 				entrenadores.Clear();
 				entrenadores.AddRange(ClaseEntrenador.GetClasesEntrenador(rom,edicion,compilacion));
-				
 				ugEntrenadores.Children.Clear();
 				for(int i=0;i<entrenadores.Count;i++)
 				{
@@ -79,6 +78,7 @@ namespace VisorSpriteEntrenadores
 					img=new System.Windows.Controls.Image();
 					img.SetImage(entrenadores[i].Sprite);
 					img.Tag=entrenadores[i];
+				
 					img.ContextMenu=contextMenuImg;
 					ugEntrenadores.Children.Add(img);
 				}
